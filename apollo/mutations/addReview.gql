@@ -1,0 +1,43 @@
+mutation addReviewMutation (
+  $reviewable_id: ID!
+  $reviewable_type: ReviewableTypeEnum!
+  $language_id: ID!
+  $name: String!
+  $email: String!
+  $account: String
+  $reference: String
+  $experience_forex: String
+  $experience_demo: String
+  $experience_real: String
+  $recommend_item: ReviewReactionEnum!
+  $good_conditions: ReviewReactionEnum!
+  $good_support: ReviewReactionEnum!
+  $location: String!
+  $summary: String!
+  $impression: ReviewImpressionEnum!
+  $text_review: String!
+  $recaptcha: String!
+) {
+  addReview(
+    reviewable_id: $reviewable_id
+    reviewable_type: $reviewable_type
+    language_id: $language_id
+    name: $name
+    email: $email
+    account: $account
+    reference: $reference
+    experience_forex: $experience_forex
+    experience_demo: $experience_demo
+    experience_real: $experience_real
+    recommend_item: $recommend_item
+    good_conditions: $good_conditions
+    good_support: $good_support
+    location: $location
+    summary: $summary
+    impression: $impression
+    text_review: $text_review
+    recaptcha: $recaptcha
+  ) {
+    id
+  }
+}

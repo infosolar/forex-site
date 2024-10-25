@@ -1,0 +1,54 @@
+query Reviews(
+  $reviewable: ReviewableTypeEnum
+  $slug: String
+  $language: String
+  $first: Int!
+  $page: Int
+) {
+  getReviews(
+    reviewable: $reviewable
+    slug: $slug
+    language: $language
+    first: $first
+    page: $page
+  ) {
+    data {
+      id
+      name
+      email
+      account
+      reference
+      experience_forex
+      experience_demo
+      experience_real
+      recommend_item
+      good_conditions
+      good_support
+      location
+      summary
+      impression
+      text_review
+      status
+      created_at
+      replies {
+        id
+        review {
+          id
+        }
+        name
+        email
+        location
+        text_response
+        status
+        created_at
+      }
+      suspicious
+    }
+    paginatorInfo {
+      count
+      hasMorePages
+      currentPage
+      total
+    }
+  }
+}
